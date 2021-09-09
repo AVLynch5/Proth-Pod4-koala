@@ -19,7 +19,7 @@ function setupClickListeners() {
       name: 'testName',
       age: 'testName',
       gender: 'testName',
-      readyForTransfer: 'testName',
+      ready_to_transfer: 'testName',
       notes: 'testName',
     };
     // call saveKoala with the new obejct
@@ -38,3 +38,18 @@ function saveKoala( newKoala ){
   // ajax call to server to get koalas
  
 }
+
+function appendToDOM() {
+  $('#viewKoalas').empty();
+  for (let koala of response) {
+    $('#viewKoalas').append(`
+      <tr>
+        <td>${koala.name}</td>
+        <td>${koala.gender}</td>
+        <td>${koala.age}</td>
+        <td>${koala.ready_to_transfer}</td>
+        <td>${koala.notes}</td>
+      </tr>
+    `);
+  };
+};
