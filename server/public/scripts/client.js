@@ -87,7 +87,7 @@ function saveKoala( newKoala ){
   });
 }
 
-function appendToDOM() {
+function appendToDOM(response) {
   $('#viewKoalas').empty();
   for (let koala of response) {
     $('#viewKoalas').append(`
