@@ -26,6 +26,7 @@ function readyToTransfer() {
 
 function setupClickListeners() {
   $( '#viewKoalas').on('click', '.deleteButton', deleteKoala); // added delete click handler
+  $( '#viewKoalas').on('click', '.readyToTransfer', readyToTransfer); // added delete click handler
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
     // get user input and put in an object
@@ -98,6 +99,7 @@ function appendToDOM(response) {
         <td>${koala.gender}</td>
         <td>${koala.ready_to_transfer}</td>
         <td>${koala.notes}</td>
+        <td><button data-id="${koala.id}" class="readyToTransfer">Ready to Transfer</button></td>
         <td><button data-id="${koala.id}" class="deleteButton">Delete</button></td>
       </tr>
     `);
