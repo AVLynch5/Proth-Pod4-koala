@@ -93,8 +93,8 @@ function appendToDOM(response) {
     $('#viewKoalas').append(`
       <tr>
         <td>${koala.name}</td>
-        <td>${koala.gender}</td>
         <td>${koala.age}</td>
+        <td>${koala.gender}</td>
         <td>${koala.ready_to_transfer}</td>
         <td>${koala.notes}</td>
         <td><button data-id="${koala.id}" class="deleteButton">Delete</button></td>
