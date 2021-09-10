@@ -30,7 +30,7 @@ function setupClickListeners() {
 // IDEA DELETE FUNCTION BELOW ↓↓ 
 
 function deleteKoala() {
-  const koalaID = $(this).data('id')
+  const koalaID = $(this).data('id');
   $.ajax({
     method: 'Delete',
     url: `/koalas/${koalaID}`
