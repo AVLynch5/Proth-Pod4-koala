@@ -10,11 +10,17 @@ $( document ).ready( function(){
 }); // end doc ready
 
 function readyToTransfer() {
-  const koalaId = %(this).data('id');
+  const koalaId = $(this).data('id');
   $.ajax({
     method: 'PUT',
-    url: `/koalas`
-  })
+    url: `/koalas/${koalaId}`,
+  }).then(function(response) {
+    console.log('Koala marked ready to transfer!');
+    getKoalas();
+  }).catch(function(error) {
+    alert('Something went wrong!');
+    console.log('Error in PUT, error: ', error);
+  });
 } // end readyToTransfer
 
 function setupClickListeners() {
