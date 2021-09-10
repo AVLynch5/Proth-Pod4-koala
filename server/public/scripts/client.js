@@ -102,4 +102,13 @@ function appendToDOM(response) {
       </tr>
     `);
   };
+  clearInputs();
 };
+
+function clearInputs() {
+  $('#nameIn').val('');
+  $('#ageIn').val('');
+  $('#genderIn').val('');
+  $('#readyForTransferIn').val('');
+  $('#notesIn').val('');
+}
