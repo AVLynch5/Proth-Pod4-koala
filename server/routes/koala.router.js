@@ -16,7 +16,7 @@ pool.on('error', (error) => {
 
 // GET
 
-router.get('/', (req, res) => {
+koalaRouter.get('/', (req, res) => {
     const queryText = 'SELECT * FROM "koalas" ORDER BY "name" LIMIT 50;';
     pool.query(queryText).then((result) => {
         // result.rows is the data from our database as an array
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
     }).catch((error) => {
         console.log('There was an error making a query', error);
         res.sendStatus(500);
-    })
+    });
 });
 
 // POST
