@@ -9,6 +9,7 @@ $( document ).ready( function(){
 
 }); // end doc ready
 
+// Function to update transfer status of koalas
 function readyToTransfer() {
   const koalaId = $(this).data('id');
   $.ajax({

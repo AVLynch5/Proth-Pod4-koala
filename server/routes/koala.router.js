@@ -21,6 +21,13 @@ pool.on('error', (error) => {
 
 
 // PUT
+/**
+ * @api {PUT} /koalas/:id
+ * @apiDescription Changes ready_to_transfer status to Y
+ * for matches to id provided
+ * 
+ * @apiParam{number} id The id of the koala ready to transfer
+ */
 koalaRouter.put('/:id', (req, res) => {
     console.log('In put, req.params: ', req.params);
     const koalaId = req.params.id;
