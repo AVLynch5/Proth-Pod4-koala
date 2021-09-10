@@ -27,6 +27,25 @@ function setupClickListeners() {
   }); 
 }
 
+// IDEA DELETE FUNCTION
+
+function deleteKoala() {
+  const koalaID = $(this).data('id')
+  $.ajax({
+    method: 'Delete',
+    url: `/koalas/${koalaID}`
+  }).then(function(response) {
+    console.log('Koala deleted on client!');
+    getKoalas()         //fix refreshing GET list - is this the function name? Check with Ahmed (delete this comment)
+  }).catch(function(error) {
+    alert('Sorry - something went wrong!');
+    console.log('Error in client DELETE', error);
+  });
+};
+
+
+// idea end delete function
+
 function getKoalas(){
   console.log( 'in getKoalas' );
   // ajax call to server to get koalas
@@ -36,7 +55,6 @@ function getKoalas(){
 function saveKoala( newKoala ){
   console.log( 'in saveKoala', newKoala );
   // ajax call to server to get koalas
- 
 }
 
 function appendToDOM() {
@@ -49,6 +67,7 @@ function appendToDOM() {
         <td>${koala.age}</td>
         <td>${koala.ready_to_transfer}</td>
         <td>${koala.notes}</td>
+        <td><button data-id="${koala.id}" class="deleteButton">Delete</button></td>
       </tr>
     `);
   };
