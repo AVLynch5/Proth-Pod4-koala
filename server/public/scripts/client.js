@@ -9,6 +9,14 @@ $( document ).ready( function(){
 
 }); // end doc ready
 
+function readyToTransfer() {
+  const koalaId = %(this).data('id');
+  $.ajax({
+    method: 'PUT',
+    url: `/koalas`
+  })
+} // end readyToTransfer
+
 function setupClickListeners() {
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
