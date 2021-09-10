@@ -32,6 +32,27 @@ koalaRouter.post('/', (req, res) => {
 });
 
 // PUT
+/**
+ * @api {PUT} /koalas/:id
+ * @apiDescription Changes ready_to_transfer status to Y
+ * for matches to id provided
+ * 
+ * @apiParam{number} id The id of the koala ready to transfer
+ */
+koalaRouter.put('/:id', (req, res) => {
+    console.log('In put, req.params: ', req.params);
+    const koalaId = req.params.id;
+    const queryText = `UPDATE "koalas" 
+                        SET "ready_to_transfer" = 'Y' 
+                        WHERE "id" = $1;`;
+    pool.query(queryText, [koalaId]).then((result) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in PUT: ', error);
+        res.sendStatus(500);
+    });
+})
+
 
 
 // DELETE
