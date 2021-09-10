@@ -63,7 +63,12 @@ function deleteKoala() {
 function getKoalas(){
   console.log( 'in getKoalas' );
   // ajax call to server to get koalas
-  
+  $.ajax({
+    method: 'GET',
+    url: '/koalas',
+  }).then(appendToDOM).catch(function (error) {
+    console.log('error in get', error);
+  });
 } // end getKoalas
 
 function saveKoala( newKoala ){
