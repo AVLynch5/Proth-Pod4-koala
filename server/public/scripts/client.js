@@ -25,6 +25,7 @@ function readyToTransfer() {
 } // end readyToTransfer
 
 function setupClickListeners() {
+  $( '#viewKoalas').on('click', '.deleteButton', deleteKoala); // added delete click handler
   $( '#addButton' ).on( 'click', function(){
     console.log( 'in addButton on click' );
     // get user input and put in an object
