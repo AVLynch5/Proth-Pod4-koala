@@ -27,7 +27,7 @@ function setupClickListeners() {
   }); 
 }
 
-// IDEA DELETE FUNCTION
+// IDEA DELETE FUNCTION BELOW ↓↓ 
 
 function deleteKoala() {
   const koalaID = $(this).data('id')
@@ -43,8 +43,7 @@ function deleteKoala() {
   });
 };
 
-
-// idea end delete function
+// idea end delete function complete ↑↑
 
 function getKoalas(){
   console.log( 'in getKoalas' );
