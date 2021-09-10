@@ -92,6 +92,10 @@ function saveKoala( newKoala ){
 function appendToDOM(response) {
   $('#viewKoalas').empty();
   for (let koala of response) {
+    let transferred = 'Transferred';
+    if (koala.ready_to_transfer == 'N') {
+      transferred = `<button data-id="${koala.id}" class="readyToTransfer">Ready to Transfer</button>`;
+    }
     $('#viewKoalas').append(`
       <tr>
         <td>${koala.name}</td>
@@ -99,7 +103,7 @@ function appendToDOM(response) {
         <td>${koala.gender}</td>
         <td>${koala.ready_to_transfer}</td>
         <td>${koala.notes}</td>
-        <td><button data-id="${koala.id}" class="readyToTransfer">Ready to Transfer</button></td>
+        <td>${transferred}</td>
         <td><button data-id="${koala.id}" class="deleteButton">Delete</button></td>
       </tr>
     `);
